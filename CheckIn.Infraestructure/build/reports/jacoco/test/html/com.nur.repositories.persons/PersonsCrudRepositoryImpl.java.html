@@ -15,40 +15,40 @@ import java.util.UUID;
 
 @Primary
 @Repository
-<span class="nc" id="L18">public class PersonsCrudRepositoryImpl implements IPersonRepository {</span>
+<span class="fc" id="L18">public class PersonsCrudRepositoryImpl implements IPersonRepository {</span>
     @Autowired
     private IPersonsCrudRepository personsCrudRepository;
 
     @Override
     public UUID update(Personas person) {
-<span class="nc" id="L24">        Personas persons = new Personas(person.getName(), person.getLastName(), person.getCi());</span>
-<span class="nc" id="L25">        PersonaJpaModel model = PersonsUtils.personToJpaEntity(persons);</span>
-<span class="nc" id="L26">        return personsCrudRepository.save(model).getId();</span>
+<span class="fc" id="L24">        Personas persons = new Personas(person.getName(), person.getLastName(), person.getCi());</span>
+<span class="fc" id="L25">        PersonaJpaModel model = PersonsUtils.personToJpaEntity(persons);</span>
+<span class="fc" id="L26">        return personsCrudRepository.save(model).getId();</span>
     }
 
     @Override
     public Personas getById(UUID id) {
         try {
-<span class="nc" id="L32">            PersonaJpaModel jpaModel = personsCrudRepository.findById(id).orElse(null);</span>
-<span class="nc bnc" id="L33" title="All 2 branches missed.">            if(jpaModel == null) return null;</span>
-<span class="nc" id="L34">            return PersonsUtils.jpaToPersons(jpaModel);</span>
-<span class="nc" id="L35">        } catch (Exception e) {</span>
-<span class="nc" id="L36">            throw new RuntimeException(e);</span>
+<span class="fc" id="L32">            PersonaJpaModel jpaModel = personsCrudRepository.findById(id).orElse(null);</span>
+<span class="pc bpc" id="L33" title="1 of 2 branches missed.">            if(jpaModel == null) return null;</span>
+<span class="fc" id="L34">            return PersonsUtils.jpaToPersons(jpaModel);</span>
+<span class="fc" id="L35">        } catch (Exception e) {</span>
+<span class="fc" id="L36">            throw new RuntimeException(e);</span>
         }
     }
 
     @Override
     public List&lt;Personas&gt; getAll() {
-<span class="nc" id="L42">        List&lt;PersonaJpaModel&gt; jpaModels = Streamable.of(personsCrudRepository.findAll()).toList();</span>
+<span class="fc" id="L42">        List&lt;PersonaJpaModel&gt; jpaModels = Streamable.of(personsCrudRepository.findAll()).toList();</span>
 
-<span class="nc" id="L44">        List&lt;Personas&gt; personas = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L45">        jpaModels.stream().forEach(item -&gt; personas.add(PersonsUtils.jpaToPersons(item)));</span>
+<span class="fc" id="L44">        List&lt;Personas&gt; personas = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L45">        jpaModels.stream().forEach(item -&gt; personas.add(PersonsUtils.jpaToPersons(item)));</span>
 
-<span class="nc" id="L47">        return personas;</span>
+<span class="fc" id="L47">        return personas;</span>
     }
 
     public void setPersonsCrudRepository(IPersonsCrudRepository personsCrudRepository) {
-<span class="nc" id="L51">        this.personsCrudRepository = personsCrudRepository;</span>
-<span class="nc" id="L52">    }</span>
+<span class="fc" id="L51">        this.personsCrudRepository = personsCrudRepository;</span>
+<span class="fc" id="L52">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -15,41 +15,41 @@ public class Commend extends Entity {
     public ValorationValueObject points;
 
     public UUID getUserId() {
-<span class="nc" id="L18">        return userId;</span>
+<span class="fc" id="L18">        return userId;</span>
     }
 
     public void setUserId(UUID userId) {
-<span class="nc" id="L22">        this.userId = userId;</span>
-<span class="nc" id="L23">    }</span>
+<span class="fc" id="L22">        this.userId = userId;</span>
+<span class="fc" id="L23">    }</span>
 
     public String getValoracion() {
-<span class="nc" id="L26">        return valoracion;</span>
+<span class="fc" id="L26">        return valoracion;</span>
     }
 
 
     public String getComentario() {
-<span class="nc" id="L31">        return comentario;</span>
+<span class="fc" id="L31">        return comentario;</span>
     }
 
 
     public String getPropiedad() {
-<span class="nc" id="L36">        return propiedad;</span>
+<span class="fc" id="L36">        return propiedad;</span>
     }
 
 
     public int getPoints() {
-<span class="nc" id="L41">        return points.getPoints();</span>
+<span class="fc" id="L41">        return points.getPoints();</span>
     }
 
 
-<span class="nc" id="L45">    public Commend(UUID userId, String valoracion, String comentario, String propiedad, int points) throws BusinessRuleValidationException {</span>
-<span class="nc" id="L46">        id = UUID.randomUUID();</span>
-<span class="nc" id="L47">        this.userId = userId;</span>
-<span class="nc" id="L48">        this.valoracion = valoracion;</span>
-<span class="nc" id="L49">        this.comentario = comentario;</span>
-<span class="nc" id="L50">        this.propiedad = propiedad;</span>
-<span class="nc" id="L51">        this.points = new ValorationValueObject(points);</span>
-<span class="nc" id="L52">    }</span>
+<span class="fc" id="L45">    public Commend(UUID userId, String valoracion, String comentario, String propiedad, int points) throws BusinessRuleValidationException {</span>
+<span class="fc" id="L46">        id = UUID.randomUUID();</span>
+<span class="fc" id="L47">        this.userId = userId;</span>
+<span class="fc" id="L48">        this.valoracion = valoracion;</span>
+<span class="fc" id="L49">        this.comentario = comentario;</span>
+<span class="fc" id="L50">        this.propiedad = propiedad;</span>
+<span class="fc" id="L51">        this.points = new ValorationValueObject(points);</span>
+<span class="fc" id="L52">    }</span>
 
 <span class="nc" id="L54">    public Commend(UUID idCommend, UUID userId, String valoracion, String comentario, String propiedad, int points) throws BusinessRuleValidationException {</span>
 <span class="nc" id="L55">        id = idCommend;</span>

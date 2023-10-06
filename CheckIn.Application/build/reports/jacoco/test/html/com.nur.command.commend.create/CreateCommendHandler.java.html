@@ -18,21 +18,21 @@ public class CreateCommendHandler implements Command.Handler&lt;CreateCommendCom
     private final ICommendRepository commendRepository;
     private final ICommendFactory commendFactory;
 
-<span class="nc" id="L21">    public CreateCommendHandler(ICommendRepository commendRepository) {</span>
-<span class="nc" id="L22">        this.commendRepository = commendRepository;</span>
-<span class="nc" id="L23">        this.commendFactory = new CommentFactory();</span>
-<span class="nc" id="L24">    }</span>
+<span class="fc" id="L21">    public CreateCommendHandler(ICommendRepository commendRepository) {</span>
+<span class="fc" id="L22">        this.commendRepository = commendRepository;</span>
+<span class="fc" id="L23">        this.commendFactory = new CommentFactory();</span>
+<span class="fc" id="L24">    }</span>
 
     @Override
     public CommendDTO handle(CreateCommendCommand command) {
-<span class="nc" id="L28">        Commend commend = null;</span>
+<span class="fc" id="L28">        Commend commend = null;</span>
         try {
-<span class="nc" id="L30">            commend = commendFactory.saveCommend(UUID.fromString(command.commendDTO.getUserId()), command.commendDTO.getDescription(), command.commendDTO.getValoration(), command.commendDTO.getProperty(), command.commendDTO.getPoints());</span>
-<span class="nc bnc" id="L31" title="All 2 branches missed.">            if(commend == null) return null;</span>
-<span class="nc" id="L32">            commendRepository.update(commend);</span>
-<span class="nc" id="L33">            return CommendMapper.from(commend);</span>
-<span class="nc" id="L34">        } catch (Exception e) {</span>
-<span class="nc" id="L35">            throw new RuntimeException(e);</span>
+<span class="fc" id="L30">            commend = commendFactory.saveCommend(UUID.fromString(command.commendDTO.getUserId()), command.commendDTO.getDescription(), command.commendDTO.getValoration(), command.commendDTO.getProperty(), command.commendDTO.getPoints());</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">            if(commend == null) return null;</span>
+<span class="fc" id="L32">            commendRepository.update(commend);</span>
+<span class="fc" id="L33">            return CommendMapper.from(commend);</span>
+<span class="fc" id="L34">        } catch (Exception e) {</span>
+<span class="fc" id="L35">            throw new RuntimeException(e);</span>
         }
     }
 }

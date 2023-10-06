@@ -8,14 +8,14 @@ import java.util.UUID;
 
 <span class="nc" id="L9">public class CommendMapper {</span>
     public static CommendDTO from(Commend commends){
-<span class="nc bnc" id="L11" title="All 2 branches missed.">        if(commends == null) return new CommendDTO();</span>
-<span class="nc" id="L12">        return new CommendDTO(</span>
-<span class="nc" id="L13">                String.valueOf(commends.getId()),</span>
-<span class="nc" id="L14">                String.valueOf(commends.getUserId()),</span>
-<span class="nc" id="L15">                commends.getValoracion(),</span>
-<span class="nc" id="L16">                commends.getComentario(),</span>
-<span class="nc" id="L17">                commends.getPropiedad(),</span>
-<span class="nc" id="L18">                commends.getPoints()</span>
+<span class="pc bpc" id="L11" title="1 of 2 branches missed.">        if(commends == null) return new CommendDTO();</span>
+<span class="fc" id="L12">        return new CommendDTO(</span>
+<span class="fc" id="L13">                String.valueOf(commends.getId()),</span>
+<span class="fc" id="L14">                String.valueOf(commends.getUserId()),</span>
+<span class="fc" id="L15">                commends.getValoracion(),</span>
+<span class="fc" id="L16">                commends.getComentario(),</span>
+<span class="fc" id="L17">                commends.getPropiedad(),</span>
+<span class="fc" id="L18">                commends.getPoints()</span>
         );
     }
 

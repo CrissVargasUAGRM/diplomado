@@ -18,20 +18,20 @@ public class CreatePersonHandler implements Command.Handler&lt;CreatePersonComma
 
     private final IPersonaFactory personaFactory;
 
-<span class="nc" id="L21">    public CreatePersonHandler(IPersonRepository personRepository) {</span>
-<span class="nc" id="L22">        this.personRepository = personRepository;</span>
-<span class="nc" id="L23">        this.personaFactory = new PersonaFactory();</span>
-<span class="nc" id="L24">    }</span>
+<span class="fc" id="L21">    public CreatePersonHandler(IPersonRepository personRepository) {</span>
+<span class="fc" id="L22">        this.personRepository = personRepository;</span>
+<span class="fc" id="L23">        this.personaFactory = new PersonaFactory();</span>
+<span class="fc" id="L24">    }</span>
 
     @Override
     public PersonDTO handle(CreatePersonCommand request) {
-<span class="nc" id="L28">        Personas persona = null;</span>
+<span class="fc" id="L28">        Personas persona = null;</span>
         try {
-<span class="nc" id="L30">            persona = personaFactory.createPerson(request.personDTO.getName(), request.personDTO.getLastName(), request.personDTO.getCi());</span>
-<span class="nc" id="L31">            personRepository.update(persona);</span>
-<span class="nc" id="L32">            return PersonMapper.from(persona);</span>
-<span class="nc" id="L33">        } catch (Exception e){</span>
-<span class="nc" id="L34">            throw new RuntimeException(e);</span>
+<span class="fc" id="L30">            persona = personaFactory.createPerson(request.personDTO.getName(), request.personDTO.getLastName(), request.personDTO.getCi());</span>
+<span class="fc" id="L31">            personRepository.update(persona);</span>
+<span class="fc" id="L32">            return PersonMapper.from(persona);</span>
+<span class="fc" id="L33">        } catch (Exception e){</span>
+<span class="fc" id="L34">            throw new RuntimeException(e);</span>
         }
     }
 }

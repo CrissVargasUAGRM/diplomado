@@ -19,23 +19,23 @@ public class Usuario extends AggregateRoot {
     public UUID personId;
 
     public String getUsername() {
-<span class="nc" id="L22">        return username;</span>
+<span class="fc" id="L22">        return username;</span>
     }
 
     public String getAccountType() {
-<span class="nc" id="L26">        return accountType;</span>
+<span class="fc" id="L26">        return accountType;</span>
     }
 
     public String getEmail() {
-<span class="nc" id="L30">        return email.getValue();</span>
+<span class="fc" id="L30">        return email.getValue();</span>
     }
 
     public String getPass() {
-<span class="nc" id="L34">        return pass.getValue();</span>
+<span class="fc" id="L34">        return pass.getValue();</span>
     }
 
     public UUID getPersonId() {
-<span class="nc" id="L38">        return personId;</span>
+<span class="fc" id="L38">        return personId;</span>
     }
 
 <span class="fc" id="L41">    public Usuario(String username, String email, String pass, String accountType, UUID personId) throws BusinessRuleValidationException {</span>

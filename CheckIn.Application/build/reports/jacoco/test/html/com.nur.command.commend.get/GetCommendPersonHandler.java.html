@@ -15,15 +15,15 @@ public class GetCommendPersonHandler implements Command.Handler&lt;GetCommendPer
 
     private final ICommendPersonRepository commendPersonRepository;
 
-<span class="nc" id="L18">    public GetCommendPersonHandler(ICommendPersonRepository commendPersonRepository) {</span>
-<span class="nc" id="L19">        this.commendPersonRepository = commendPersonRepository;</span>
-<span class="nc" id="L20">    }</span>
+<span class="fc" id="L18">    public GetCommendPersonHandler(ICommendPersonRepository commendPersonRepository) {</span>
+<span class="fc" id="L19">        this.commendPersonRepository = commendPersonRepository;</span>
+<span class="fc" id="L20">    }</span>
 
     @Override
     public CommendPersonDTO handle(GetCommendPersonQuery command) {
-<span class="nc" id="L24">        CommendPerson commend = commendPersonRepository.getById(UUID.fromString(command.commandPersonId));</span>
-<span class="nc bnc" id="L25" title="All 2 branches missed.">        if(commend == null) return null;</span>
-<span class="nc" id="L26">        return CommendPersonMapper.from(commend);</span>
+<span class="fc" id="L24">        CommendPerson commend = commendPersonRepository.getById(UUID.fromString(command.commandPersonId));</span>
+<span class="pc bpc" id="L25" title="1 of 2 branches missed.">        if(commend == null) return null;</span>
+<span class="fc" id="L26">        return CommendPersonMapper.from(commend);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -14,15 +14,15 @@ public class GetCommendHandler implements Command.Handler&lt;GetCommendQuery, Co
 
     private final ICommendRepository commendRepository;
 
-<span class="nc" id="L17">    public GetCommendHandler(ICommendRepository commendRepository) {</span>
-<span class="nc" id="L18">        this.commendRepository = commendRepository;</span>
-<span class="nc" id="L19">    }</span>
+<span class="fc" id="L17">    public GetCommendHandler(ICommendRepository commendRepository) {</span>
+<span class="fc" id="L18">        this.commendRepository = commendRepository;</span>
+<span class="fc" id="L19">    }</span>
 
     @Override
     public CommendDTO handle(GetCommendQuery command) {
-<span class="nc" id="L23">        Commend commend = commendRepository.getById(UUID.fromString(command.commendId));</span>
-<span class="nc bnc" id="L24" title="All 2 branches missed.">        if(commend == null) return null;</span>
-<span class="nc" id="L25">        return CommendMapper.from(commend);</span>
+<span class="fc" id="L23">        Commend commend = commendRepository.getById(UUID.fromString(command.commendId));</span>
+<span class="pc bpc" id="L24" title="1 of 2 branches missed.">        if(commend == null) return null;</span>
+<span class="fc" id="L25">        return CommendMapper.from(commend);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

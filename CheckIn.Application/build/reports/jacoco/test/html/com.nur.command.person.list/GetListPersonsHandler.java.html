@@ -14,17 +14,17 @@ public class GetListPersonsHandler implements Command.Handler&lt;GetListPersonsQ
 
     private final IPersonRepository personRepository;
 
-<span class="nc" id="L17">    public GetListPersonsHandler(IPersonRepository personRepository) {</span>
-<span class="nc" id="L18">        this.personRepository = personRepository;</span>
-<span class="nc" id="L19">    }</span>
+<span class="fc" id="L17">    public GetListPersonsHandler(IPersonRepository personRepository) {</span>
+<span class="fc" id="L18">        this.personRepository = personRepository;</span>
+<span class="fc" id="L19">    }</span>
 
     @Override
     public List&lt;PersonDTO&gt; handle(GetListPersonsQuery command) {
         try {
-<span class="nc" id="L24">            List&lt;Personas&gt; personas = this.personRepository.getAll();</span>
-<span class="nc" id="L25">            return personas.stream().map(PersonMapper::from).toList();</span>
-<span class="nc" id="L26">        } catch (Exception e){</span>
-<span class="nc" id="L27">            throw new RuntimeException(e);</span>
+<span class="fc" id="L24">            List&lt;Personas&gt; personas = this.personRepository.getAll();</span>
+<span class="fc" id="L25">            return personas.stream().map(PersonMapper::from).toList();</span>
+<span class="fc" id="L26">        } catch (Exception e){</span>
+<span class="fc" id="L27">            throw new RuntimeException(e);</span>
         }
     }
 }

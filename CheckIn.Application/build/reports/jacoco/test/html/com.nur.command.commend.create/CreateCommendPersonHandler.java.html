@@ -17,21 +17,21 @@ public class CreateCommendPersonHandler implements Command.Handler&lt;CreateComm
     private final ICommendPersonRepository commendPersonRepository;
     private final ICommendPersonFactory commendPersonFactory;
 
-<span class="nc" id="L20">    public CreateCommendPersonHandler(ICommendPersonRepository commendPersonRepository) {</span>
-<span class="nc" id="L21">        this.commendPersonRepository = commendPersonRepository;</span>
-<span class="nc" id="L22">        this.commendPersonFactory = new CommendPersonFactory();</span>
-<span class="nc" id="L23">    }</span>
+<span class="fc" id="L20">    public CreateCommendPersonHandler(ICommendPersonRepository commendPersonRepository) {</span>
+<span class="fc" id="L21">        this.commendPersonRepository = commendPersonRepository;</span>
+<span class="fc" id="L22">        this.commendPersonFactory = new CommendPersonFactory();</span>
+<span class="fc" id="L23">    }</span>
 
     @Override
     public CommendPersonDTO handle(CreateCommendPersonCommand command) {
-<span class="nc" id="L27">        CommendPerson commend = null;</span>
+<span class="fc" id="L27">        CommendPerson commend = null;</span>
         try {
-<span class="nc" id="L29">            commend = commendPersonFactory.saveCommendPerson(UUID.fromString(command.commendPersonDTO.getUserId()), command.commendPersonDTO.getValoration(), command.commendPersonDTO.getDescription(), command.commendPersonDTO.getPerson(), command.commendPersonDTO.getPoints());</span>
-<span class="nc bnc" id="L30" title="All 2 branches missed.">            if(commend == null) return null;</span>
-<span class="nc" id="L31">            commendPersonRepository.update(commend);</span>
-<span class="nc" id="L32">            return CommendPersonMapper.from(commend);</span>
-<span class="nc" id="L33">        } catch (Exception e) {</span>
-<span class="nc" id="L34">            throw new RuntimeException(e);</span>
+<span class="fc" id="L29">            commend = commendPersonFactory.saveCommendPerson(UUID.fromString(command.commendPersonDTO.getUserId()), command.commendPersonDTO.getValoration(), command.commendPersonDTO.getDescription(), command.commendPersonDTO.getPerson(), command.commendPersonDTO.getPoints());</span>
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">            if(commend == null) return null;</span>
+<span class="fc" id="L31">            commendPersonRepository.update(commend);</span>
+<span class="fc" id="L32">            return CommendPersonMapper.from(commend);</span>
+<span class="fc" id="L33">        } catch (Exception e) {</span>
+<span class="fc" id="L34">            throw new RuntimeException(e);</span>
         }
     }
 }

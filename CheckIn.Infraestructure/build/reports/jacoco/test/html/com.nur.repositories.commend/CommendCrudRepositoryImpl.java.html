@@ -16,45 +16,45 @@ import java.util.UUID;
 
 @Primary
 @Repository
-<span class="nc" id="L19">public class CommendCrudRepositoryImpl implements ICommendRepository {</span>
+<span class="fc" id="L19">public class CommendCrudRepositoryImpl implements ICommendRepository {</span>
 
     @Autowired
     private ICommendCrudRepository commendCrudRepository;
 
     @Override
     public UUID update(Commend commend) throws BusinessRuleValidationException {
-<span class="nc" id="L26">        Commend commends = new Commend(commend.getUserId(), commend.getValoracion(), commend.getComentario(), commend.getPropiedad(), commend.getPoints());</span>
-<span class="nc" id="L27">        CommendJpaModel model = CommendUtils.commendToJpaEntity(commends);</span>
-<span class="nc" id="L28">        return commendCrudRepository.save(model).getId();</span>
+<span class="fc" id="L26">        Commend commends = new Commend(commend.getUserId(), commend.getValoracion(), commend.getComentario(), commend.getPropiedad(), commend.getPoints());</span>
+<span class="fc" id="L27">        CommendJpaModel model = CommendUtils.commendToJpaEntity(commends);</span>
+<span class="fc" id="L28">        return commendCrudRepository.save(model).getId();</span>
     }
 
     @Override
     public Commend getById(UUID id) {
         try {
-<span class="nc" id="L34">        CommendJpaModel jpaModel = commendCrudRepository.findById(id).orElse(null);</span>
-<span class="nc bnc" id="L35" title="All 2 branches missed.">        if(jpaModel == null) return null;</span>
-<span class="nc" id="L36">        return CommendUtils.jpaToCommend(jpaModel);</span>
-<span class="nc" id="L37">        } catch (Exception e) {</span>
-<span class="nc" id="L38">            throw new RuntimeException(e);</span>
+<span class="fc" id="L34">        CommendJpaModel jpaModel = commendCrudRepository.findById(id).orElse(null);</span>
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">        if(jpaModel == null) return null;</span>
+<span class="fc" id="L36">        return CommendUtils.jpaToCommend(jpaModel);</span>
+<span class="fc" id="L37">        } catch (Exception e) {</span>
+<span class="fc" id="L38">            throw new RuntimeException(e);</span>
         }
     }
 
     @Override
     public List&lt;Commend&gt; getAll() {
-<span class="nc" id="L44">        List&lt;CommendJpaModel&gt; jpaModels = Streamable.of(commendCrudRepository.findAll()).toList();</span>
-<span class="nc" id="L45">        List&lt;Commend&gt; commends = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L46">        jpaModels.stream().forEach(item -&gt; {</span>
+<span class="fc" id="L44">        List&lt;CommendJpaModel&gt; jpaModels = Streamable.of(commendCrudRepository.findAll()).toList();</span>
+<span class="fc" id="L45">        List&lt;Commend&gt; commends = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L46">        jpaModels.stream().forEach(item -&gt; {</span>
             try {
-<span class="nc" id="L48">                commends.add(CommendUtils.jpaToCommend(item));</span>
+<span class="fc" id="L48">                commends.add(CommendUtils.jpaToCommend(item));</span>
 <span class="nc" id="L49">            } catch (BusinessRuleValidationException e) {</span>
 <span class="nc" id="L50">                throw new RuntimeException(e);</span>
-<span class="nc" id="L51">            }</span>
-<span class="nc" id="L52">        });</span>
-<span class="nc" id="L53">        return commends;</span>
+<span class="fc" id="L51">            }</span>
+<span class="fc" id="L52">        });</span>
+<span class="fc" id="L53">        return commends;</span>
     }
 
     public void setCommendCrudRepository(ICommendCrudRepository commendCrudRepository) {
-<span class="nc" id="L57">        this.commendCrudRepository = commendCrudRepository;</span>
-<span class="nc" id="L58">    }</span>
+<span class="fc" id="L57">        this.commendCrudRepository = commendCrudRepository;</span>
+<span class="fc" id="L58">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

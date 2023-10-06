@@ -14,17 +14,17 @@ public class GetListCommendHandler implements Command.Handler&lt;GetListCommendQ
 
     private final ICommendRepository commendRepository;
 
-<span class="nc" id="L17">    public GetListCommendHandler(ICommendRepository commendRepository) {</span>
-<span class="nc" id="L18">        this.commendRepository = commendRepository;</span>
-<span class="nc" id="L19">    }</span>
+<span class="fc" id="L17">    public GetListCommendHandler(ICommendRepository commendRepository) {</span>
+<span class="fc" id="L18">        this.commendRepository = commendRepository;</span>
+<span class="fc" id="L19">    }</span>
 
     @Override
     public List&lt;CommendDTO&gt; handle(GetListCommendQuery command) {
         try {
-<span class="nc" id="L24">            List&lt;Commend&gt; commends = this.commendRepository.getAll();</span>
-<span class="nc" id="L25">            return commends.stream().map(CommendMapper::from).toList();</span>
-<span class="nc" id="L26">        } catch (Exception e){</span>
-<span class="nc" id="L27">            throw new RuntimeException(e);</span>
+<span class="fc" id="L24">            List&lt;Commend&gt; commends = this.commendRepository.getAll();</span>
+<span class="fc" id="L25">            return commends.stream().map(CommendMapper::from).toList();</span>
+<span class="fc" id="L26">        } catch (Exception e){</span>
+<span class="fc" id="L27">            throw new RuntimeException(e);</span>
         }
     }
 }

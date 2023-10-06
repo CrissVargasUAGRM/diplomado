@@ -5,10 +5,10 @@ import com.nur.model.Commend;
 
 import java.util.UUID;
 
-<span class="nc" id="L8">public class CommentFactory implements ICommendFactory{</span>
+<span class="fc" id="L8">public class CommentFactory implements ICommendFactory{</span>
     @Override
     public Commend saveCommend(UUID userId, String comment, String valoration, String ownProperty, int points) throws BusinessRuleValidationException {
-<span class="nc" id="L11">        return new Commend(userId, valoration, comment, ownProperty, points);</span>
+<span class="fc" id="L11">        return new Commend(userId, valoration, comment, ownProperty, points);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CommendPersonController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CheckInApi</a> &gt; <a href="index.source.html" class="el_package">com.nur.controllers</a> &gt; <span class="el_source">CommendPersonController.java</span></div><h1>CommendPersonController.java</h1><pre class="source lang-java linenums">package com.nur.controllers;
+
+import an.awesome.pipelinr.Pipeline;
+import com.nur.command.commend.create.CreateCommendCommand;
+import com.nur.command.commend.create.CreateCommendPersonCommand;
+import com.nur.command.commend.get.GetCommendPersonQuery;
+import com.nur.command.commend.get.GetCommendQuery;
+import com.nur.command.commend.list.GetListCommendPersonQuery;
+import com.nur.command.commend.list.GetListCommendQuery;
+import com.nur.dtos.CommendDTO;
+import com.nur.dtos.CommendPersonDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@CrossOrigin(origins = &quot;*&quot;)
+@RestController
+public class CommendPersonController {
+<span class="nc" id="L21">    Logger logger = LoggerFactory.getLogger(PersonsController.class);</span>
+
+    final Pipeline pipeline;
+
+<span class="nc" id="L25">    public CommendPersonController(Pipeline pipeline) {</span>
+<span class="nc" id="L26">        this.pipeline = pipeline;</span>
+<span class="nc" id="L27">    }</span>
+
+    @PostMapping(&quot;/commend-person/create&quot;)
+    public CommendPersonDTO createCommend(@RequestBody CommendPersonDTO commend){
+<span class="nc" id="L31">        CreateCommendPersonCommand command = new CreateCommendPersonCommand(commend);</span>
+<span class="nc" id="L32">        return command.execute(pipeline);</span>
+    }
+
+    @GetMapping(&quot;/commend-person/{commendId}&quot;)
+    public CommendPersonDTO findById(@PathVariable String commendId){
+<span class="nc" id="L37">        GetCommendPersonQuery query = new GetCommendPersonQuery(commendId);</span>
+<span class="nc" id="L38">        return query.execute(pipeline);</span>
+    }
+
+    @GetMapping(&quot;/commends-person&quot;)
+    public List&lt;CommendPersonDTO&gt; getAll(){
+<span class="nc" id="L43">        GetListCommendPersonQuery query = new GetListCommendPersonQuery();</span>
+<span class="nc" id="L44">        return query.execute(pipeline);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

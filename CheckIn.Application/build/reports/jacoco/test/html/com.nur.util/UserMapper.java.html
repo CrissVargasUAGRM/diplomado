@@ -8,14 +8,14 @@ import java.util.UUID;
 
 <span class="nc" id="L9">public class UserMapper {</span>
     public static UsersDTO from(Usuario user){
-<span class="nc bnc" id="L11" title="All 2 branches missed.">        if(user == null) return new UsersDTO();</span>
-<span class="nc" id="L12">        return new UsersDTO(</span>
-<span class="nc" id="L13">                user.getId().toString(),</span>
-<span class="nc" id="L14">                user.getUsername(),</span>
-<span class="nc" id="L15">                user.getEmail(),</span>
-<span class="nc" id="L16">                user.getPass(),</span>
-<span class="nc" id="L17">                user.getAccountType(),</span>
-<span class="nc" id="L18">                user.getPersonId().toString()</span>
+<span class="pc bpc" id="L11" title="1 of 2 branches missed.">        if(user == null) return new UsersDTO();</span>
+<span class="fc" id="L12">        return new UsersDTO(</span>
+<span class="fc" id="L13">                user.getId().toString(),</span>
+<span class="fc" id="L14">                user.getUsername(),</span>
+<span class="fc" id="L15">                user.getEmail(),</span>
+<span class="fc" id="L16">                user.getPass(),</span>
+<span class="fc" id="L17">                user.getAccountType(),</span>
+<span class="fc" id="L18">                user.getPersonId().toString()</span>
         );
     }
 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.nur.command.users.get.GetUserHandlerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-06T20:03:53" hostname="31T105P61" time="0.003">
+  <properties/>
+  <testcase name="testCreateHandler()" classname="com.nur.command.users.get.GetUserHandlerTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

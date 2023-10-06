@@ -14,15 +14,15 @@ public class GetPersonHandler implements Command.Handler&lt;GetPersonQuery, Pers
 
     private final IPersonRepository personRepository;
 
-<span class="nc" id="L17">    public GetPersonHandler(IPersonRepository personRepository) {</span>
-<span class="nc" id="L18">        this.personRepository = personRepository;</span>
-<span class="nc" id="L19">    }</span>
+<span class="fc" id="L17">    public GetPersonHandler(IPersonRepository personRepository) {</span>
+<span class="fc" id="L18">        this.personRepository = personRepository;</span>
+<span class="fc" id="L19">    }</span>
 
     @Override
     public PersonDTO handle(GetPersonQuery getPersonCommand) {
-<span class="nc" id="L23">        Personas person = personRepository.getById(UUID.fromString(getPersonCommand.personId));</span>
-<span class="nc bnc" id="L24" title="All 2 branches missed.">        if(person == null) return null;</span>
-<span class="nc" id="L25">        return PersonMapper.from(person);</span>
+<span class="fc" id="L23">        Personas person = personRepository.getById(UUID.fromString(getPersonCommand.personId));</span>
+<span class="pc bpc" id="L24" title="1 of 2 branches missed.">        if(person == null) return null;</span>
+<span class="fc" id="L25">        return PersonMapper.from(person);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

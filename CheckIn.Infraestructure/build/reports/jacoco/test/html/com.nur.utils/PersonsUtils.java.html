@@ -5,20 +5,20 @@ import com.nur.model.Personas;
 
 <span class="nc" id="L6">public class PersonsUtils {</span>
     public static PersonaJpaModel personToJpaEntity(Personas person){
-<span class="nc" id="L8">        PersonaJpaModel model = new PersonaJpaModel();</span>
-<span class="nc" id="L9">        model.setId(person.getId());</span>
-<span class="nc" id="L10">        model.setName(person.getName());</span>
-<span class="nc" id="L11">        model.setLastName(person.getLastName());</span>
-<span class="nc" id="L12">        model.setCi(person.getCi());</span>
-<span class="nc" id="L13">        return model;</span>
+<span class="fc" id="L8">        PersonaJpaModel model = new PersonaJpaModel();</span>
+<span class="fc" id="L9">        model.setId(person.getId());</span>
+<span class="fc" id="L10">        model.setName(person.getName());</span>
+<span class="fc" id="L11">        model.setLastName(person.getLastName());</span>
+<span class="fc" id="L12">        model.setCi(person.getCi());</span>
+<span class="fc" id="L13">        return model;</span>
     }
 
     public static Personas jpaToPersons(PersonaJpaModel jpaModel){
-<span class="nc" id="L17">        return new Personas(</span>
-<span class="nc" id="L18">                jpaModel.getId(),</span>
-<span class="nc" id="L19">                jpaModel.getName(),</span>
-<span class="nc" id="L20">                jpaModel.getLastName(),</span>
-<span class="nc" id="L21">                jpaModel.getCi()</span>
+<span class="fc" id="L17">        return new Personas(</span>
+<span class="fc" id="L18">                jpaModel.getId(),</span>
+<span class="fc" id="L19">                jpaModel.getName(),</span>
+<span class="fc" id="L20">                jpaModel.getLastName(),</span>
+<span class="fc" id="L21">                jpaModel.getCi()</span>
         );
     }
 }

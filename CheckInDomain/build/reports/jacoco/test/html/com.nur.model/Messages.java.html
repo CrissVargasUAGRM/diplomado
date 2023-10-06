@@ -15,42 +15,42 @@ public class Messages extends Entity {
     public UUID conversacionId;
 
     public UUID getUserId() {
-<span class="nc" id="L18">        return userId;</span>
+<span class="fc" id="L18">        return userId;</span>
     }
 
     public void setUserId(UUID userId) {
-<span class="nc" id="L22">        this.userId = userId;</span>
-<span class="nc" id="L23">    }</span>
+<span class="fc" id="L22">        this.userId = userId;</span>
+<span class="fc" id="L23">    }</span>
 
     public String getDescription() {
-<span class="nc" id="L26">        return description;</span>
+<span class="fc" id="L26">        return description;</span>
     }
 
     public StatusMessage getStatus() {
-<span class="nc" id="L30">        return status;</span>
+<span class="fc" id="L30">        return status;</span>
     }
 
     public UUID getConversacionId() {
-<span class="nc" id="L34">        return conversacionId;</span>
+<span class="fc" id="L34">        return conversacionId;</span>
     }
 
     public void setConversacionId(UUID conversacionId) {
-<span class="nc" id="L38">        this.conversacionId = conversacionId;</span>
-<span class="nc" id="L39">    }</span>
+<span class="fc" id="L38">        this.conversacionId = conversacionId;</span>
+<span class="fc" id="L39">    }</span>
 
-<span class="nc" id="L41">    public Messages(UUID userId, String description, UUID conversacionId) {</span>
-<span class="nc" id="L42">        id = UUID.randomUUID();</span>
-<span class="nc" id="L43">        this.userId = userId;</span>
-<span class="nc" id="L44">        this.description = description;</span>
-<span class="nc" id="L45">        this.status = StatusMessage.VIGENTE;</span>
-<span class="nc" id="L46">        this.conversacionId = conversacionId;</span>
-<span class="nc" id="L47">    }</span>
+<span class="fc" id="L41">    public Messages(UUID userId, String description, UUID conversacionId) {</span>
+<span class="fc" id="L42">        id = UUID.randomUUID();</span>
+<span class="fc" id="L43">        this.userId = userId;</span>
+<span class="fc" id="L44">        this.description = description;</span>
+<span class="fc" id="L45">        this.status = StatusMessage.VIGENTE;</span>
+<span class="fc" id="L46">        this.conversacionId = conversacionId;</span>
+<span class="fc" id="L47">    }</span>
 
     public void anularMensaje(UUID messageId) throws BusinessRuleValidationException {
-<span class="nc bnc" id="L50" title="All 4 branches missed.">        if(messageId == null || messageId.equals(&quot;&quot;)){</span>
-<span class="nc" id="L51">            throw new BusinessRuleValidationException(&quot;Error anulando mensaje&quot;);</span>
+<span class="pc bpc" id="L50" title="1 of 4 branches missed.">        if(messageId == null || messageId.equals(&quot;&quot;)){</span>
+<span class="fc" id="L51">            throw new BusinessRuleValidationException(&quot;Error anulando mensaje&quot;);</span>
         }
-<span class="nc" id="L53">        this.status = StatusMessage.ANULADO;</span>
-<span class="nc" id="L54">    }</span>
+<span class="fc" id="L53">        this.status = StatusMessage.ANULADO;</span>
+<span class="fc" id="L54">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.nur.repositories.commend.CommendCrudRepositoryImplTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-10-06T20:04:09" hostname="31T105P61" time="2.063">
+  <properties/>
+  <testcase name="testGetById()" classname="com.nur.repositories.commend.CommendCrudRepositoryImplTest" time="2.033"/>
+  <testcase name="testGetByIdException()" classname="com.nur.repositories.commend.CommendCrudRepositoryImplTest" time="0.009"/>
+  <testcase name="testUpdateCommend()" classname="com.nur.repositories.commend.CommendCrudRepositoryImplTest" time="0.004"/>
+  <testcase name="testGetAll()" classname="com.nur.repositories.commend.CommendCrudRepositoryImplTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
