@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 @RestController
 public class ConversationsController {
-    Logger logger = LoggerFactory.getLogger(ConversationsController.class);
+  Logger logger = LoggerFactory.getLogger(ConversationsController.class);
 
-    final Pipeline pipeline;
+  final Pipeline pipeline;
 
-    public ConversationsController(Pipeline pipeline) {
-        this.pipeline = pipeline;
-    }
+  public ConversationsController(Pipeline pipeline) {
+    this.pipeline = pipeline;
+  }
 
-    @PostMapping("/conversation/create")
-    public ConversationDTO createConversation(){
-        CreateConversationCommand command = new CreateConversationCommand();
-        return command.execute(pipeline);
-    }
+  @PostMapping("/conversation/create")
+  public ConversationDTO createConversation() {
+    CreateConversationCommand command = new CreateConversationCommand();
+    return command.execute(pipeline);
+  }
 }
