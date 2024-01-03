@@ -28,13 +28,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication(
-    exclude = {
-      org.springframework.cloud.aws.autoconfigure.context.ContextInstanceDataAutoConfiguration
-          .class,
-      org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration.class,
-      org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration
-          .class,
-    })
+		scanBasePackages = {"con.nur.controllers"}
+)
 @ComponentScan(
     basePackages = {
       "controllers",
@@ -96,4 +91,5 @@ public class CheckInApiApplication {
         .with(notificationHandlers::stream)
         .with(middlewares::orderedStream);
   }
+
 }
