@@ -1,4 +1,4 @@
-rootProject.name = 'NurBnbC'
+rootProject.name = 'nurbnbc'
 include 'ShareKernel'
 include 'CheckInDomain'
 include 'CheckIn.Application'

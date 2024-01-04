@@ -31,7 +31,7 @@ subprojects {
 		// Otras dependencias de tu proyecto
 
 		// Jacoco
-		implementation 'org.jacoco:org.jacoco.core:0.8.7'
+		implementation 'org.jacoco:org.jacoco.core:0.8.11'
 	}
 
     test {
@@ -109,12 +109,12 @@ sonar {
 	outputs.upToDateWhen { false }
 }*/
 
-spotless {
+/*spotless {
     java {
         googleJavaFormat()
         // Add other formatting rules if needed
     }
-}
+}*/
 
 
 
