@@ -3,8 +3,6 @@ s
 CCheckInApi/src/main/java/com/nur/controllers/PersonsController.java,9\7\973c7f34da65baa27b06323dffbf71e85632cd9f
 ?
 .prettierrc.yml,1\d\1dd670afc0fd1f93f129b0aed590836e9071a55a
-=
-.editorconfig,6\2\626a747c8694eaae66f2afb3d1a745b045782c70
 ?
 .prettierignore,b\6\b69d8408b6c89ae66e712f0e6af68848291cfdfb
 <
