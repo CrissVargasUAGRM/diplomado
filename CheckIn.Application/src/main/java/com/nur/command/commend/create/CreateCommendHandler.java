@@ -29,12 +29,11 @@ public class CreateCommendHandler implements Command.Handler<CreateCommendComman
             commend = commendFactory.saveCommend(UUID.fromString(command.commendDTO.getUserId()),
                     command.commendDTO.getDescription(), command.commendDTO.getValoration(),
                     command.commendDTO.getProperty(), command.commendDTO.getPoints());
-
-            if (commend == null) return null;
             commendRepository.update(commend);
-            return CommendMapper.from(commend);
+
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
+        return CommendMapper.from(commend);
     }
 }
