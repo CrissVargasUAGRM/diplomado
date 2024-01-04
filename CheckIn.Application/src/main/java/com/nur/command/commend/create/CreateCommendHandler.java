@@ -1,7 +1,6 @@
 package com.nur.command.commend.create;
 
 import an.awesome.pipelinr.Command;
-import com.nur.core.BusinessRuleValidationException;
 import com.nur.dtos.CommendDTO;
 import com.nur.factories.commends.CommentFactory;
 import com.nur.factories.commends.ICommendFactory;
@@ -28,7 +27,7 @@ public class CreateCommendHandler implements Command.Handler<CreateCommendComman
         Commend commend = null;
         try {
             commend = commendFactory.saveCommend(UUID.fromString(command.commendDTO.getUserId()), command.commendDTO.getDescription(), command.commendDTO.getValoration(), command.commendDTO.getProperty(), command.commendDTO.getPoints());
-            if(commend == null) return null;
+            if (commend == null) return null;
             commendRepository.update(commend);
             return CommendMapper.from(commend);
         } catch (Exception e) {
