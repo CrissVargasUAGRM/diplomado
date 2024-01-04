@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.nur.factories.conversation.ConversationFactoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-27T02:19:25" hostname="DESKTOP-B9MAGP3" time="0.137">
-  <properties/>
-  <testcase name="testCreateConversationFactory()" classname="com.nur.factories.conversation.ConversationFactoryTest" time="0.137"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

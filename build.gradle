@@ -4,6 +4,7 @@ plugins {
     id 'java'
     id "org.sonarqube" version "4.4.1.3373"
     id("com.github.johnrengelman.shadow") version "7.0.0"
+	id 'jacoco'
     id 'idea'
     id 'checkstyle'
     id 'com.diffplug.spotless' version '5.0.0'
@@ -26,6 +27,13 @@ subprojects {
         mavenCentral()
     }
 
+	dependencies {
+		// Otras dependencias de tu proyecto
+
+		// Jacoco
+		implementation 'org.jacoco:org.jacoco.core:0.8.7'
+	}
+
     test {
         finalizedBy jacocoTestReport
         testLogging {
@@ -34,12 +42,14 @@ subprojects {
                     TestLogEvent.SKIPPED
         }
     }
-    /*jacocoTestReport {
-        dependsOn test
+    jacocoTestReport {
+        //dependsOn test
         reports {
-            xml.enabled true
+            xml.required = true
+			html.required = true
+			html.destination file("build/reports/jacoco")
         }
-    }*/
+    }
 
 }
 project(':ShareKernel') {
@@ -84,7 +94,7 @@ checkstyle {
     ignoreFailures = false
 }
 
-sonarqube {
+sonar {
     properties {
         property "sonar.gradle.skipCompile", "true"
         property "sonar.projectKey", "CrissVargasUAGRM_diplomado"
@@ -105,5 +115,7 @@ spotless {
         // Add other formatting rules if needed
     }
 }
+
+
 
 
