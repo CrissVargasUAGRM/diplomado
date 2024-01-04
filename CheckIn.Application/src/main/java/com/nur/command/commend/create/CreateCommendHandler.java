@@ -26,7 +26,10 @@ public class CreateCommendHandler implements Command.Handler<CreateCommendComman
     public CommendDTO handle(CreateCommendCommand command) {
         Commend commend = null;
         try {
-            commend = commendFactory.saveCommend(UUID.fromString(command.commendDTO.getUserId()), command.commendDTO.getDescription(), command.commendDTO.getValoration(), command.commendDTO.getProperty(), command.commendDTO.getPoints());
+            commend = commendFactory.saveCommend(UUID.fromString(command.commendDTO.getUserId()),
+                    command.commendDTO.getDescription(), command.commendDTO.getValoration(),
+                    command.commendDTO.getProperty(), command.commendDTO.getPoints());
+
             if (commend == null) return null;
             commendRepository.update(commend);
             return CommendMapper.from(commend);

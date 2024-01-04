@@ -1,7 +1,6 @@
 package com.nur.command.commend.create;
 
 import an.awesome.pipelinr.Command;
-import com.nur.core.BusinessRuleValidationException;
 import com.nur.dtos.CommendPersonDTO;
 import com.nur.factories.commends.CommendPersonFactory;
 import com.nur.factories.commends.ICommendPersonFactory;
