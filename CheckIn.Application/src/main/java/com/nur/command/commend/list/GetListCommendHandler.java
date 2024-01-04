@@ -13,7 +13,7 @@ import java.util.List;
 public class GetListCommendHandler implements Command.Handler<GetListCommendQuery, List<CommendDTO>> {
 
     private final ICommendRepository commendRepository;
-
+    
     public GetListCommendHandler(ICommendRepository commendRepository) {
         this.commendRepository = commendRepository;
     }
@@ -23,7 +23,7 @@ public class GetListCommendHandler implements Command.Handler<GetListCommendQuer
         try {
             List<Commend> commends = this.commendRepository.getAll();
             return commends.stream().map(CommendMapper::from).toList();
-        } catch (Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
