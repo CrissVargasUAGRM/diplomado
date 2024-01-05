@@ -1,7 +1,6 @@
-rootProject.name = 'nurbnbc'
+rootProject.name = 'NurBnbC'
 include 'ShareKernel'
 include 'CheckInDomain'
 include 'CheckIn.Application'
 include 'CheckIn.Infraestructure'
 include 'CheckInApi'
-

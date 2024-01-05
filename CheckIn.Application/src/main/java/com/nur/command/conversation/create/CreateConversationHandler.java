@@ -10,26 +10,27 @@ import com.nur.util.ConversationMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CreateConversationHandler implements Command.Handler<CreateConversationCommand, ConversationDTO> {
+public class CreateConversationHandler
+    implements Command.Handler<CreateConversationCommand, ConversationDTO> {
 
-    private final IConversationRepository conversationRepository;
+  private final IConversationRepository conversationRepository;
 
-    private final IConversationFactory conversationFactory;
+  private final IConversationFactory conversationFactory;
 
-    public CreateConversationHandler(IConversationRepository conversationRepository) {
-        this.conversationRepository = conversationRepository;
-        this.conversationFactory = new ConversationFactory();
+  public CreateConversationHandler(IConversationRepository conversationRepository) {
+    this.conversationRepository = conversationRepository;
+    this.conversationFactory = new ConversationFactory();
+  }
+
+  @Override
+  public ConversationDTO handle(CreateConversationCommand command) {
+    Conversacion conversation = null;
+    try {
+      conversation = conversationFactory.createConversation();
+      conversationRepository.update(conversation);
+      return ConversationMapper.from(conversation);
+    } catch (Exception ex) {
+      throw new RuntimeException(ex);
     }
-
-    @Override
-    public ConversationDTO handle(CreateConversationCommand command) {
-        Conversacion conversation = null;
-        try {
-            conversation = conversationFactory.createConversation();
-            conversationRepository.update(conversation);
-            return ConversationMapper.from(conversation);
-        } catch (Exception ex) {
-            throw new RuntimeException(ex);
-        }
-    }
+  }
 }

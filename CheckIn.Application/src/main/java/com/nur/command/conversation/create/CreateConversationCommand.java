@@ -5,9 +5,9 @@ import com.nur.dtos.ConversationDTO;
 
 public class CreateConversationCommand implements Command<ConversationDTO> {
 
-    ConversationDTO conversationDTO;
+  ConversationDTO conversationDTO;
 
-    public CreateConversationCommand() {
-        this.conversationDTO = new ConversationDTO();
-    }
+  public CreateConversationCommand() {
+    this.conversationDTO = new ConversationDTO();
+  }
 }

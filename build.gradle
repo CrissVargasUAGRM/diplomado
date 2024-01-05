@@ -97,17 +97,17 @@ sonar {
 
     }
 }
-/*tasks.sonar {
+tasks.sonar {
 	// Enable build cache for this specific task
 	outputs.upToDateWhen { false }
-}*/
+}
 
-/*spotless {
+spotless {
     java {
         googleJavaFormat()
         // Add other formatting rules if needed
     }
-}*/
+}
 
 
 

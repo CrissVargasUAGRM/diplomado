@@ -27,9 +27,9 @@ test {
     useJUnitPlatform()
 }
 
-/*spotless {
+spotless {
     java {
         googleJavaFormat()
         // Add other formatting rules if needed
     }
-}*/
+}

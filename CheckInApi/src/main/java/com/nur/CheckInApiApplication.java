@@ -27,9 +27,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@SpringBootApplication(
-		scanBasePackages = {"con.nur.controllers"}
-)
+@SpringBootApplication()
 @ComponentScan(
     basePackages = {
       "controllers",
@@ -59,12 +57,14 @@ public class CheckInApiApplication {
   }
 
   @Bean(name = "commendRepository")
-  public ICommendRepository commendRepository(){
+  public ICommendRepository commendRepository() {
     return new CommendCrudRepositoryImpl();
   }
 
   @Bean(name = "commendPersonRepository")
-  public ICommendPersonRepository commendPersonRepository() { return new CommendPersonCrudRepositoryImpl(); }
+  public ICommendPersonRepository commendPersonRepository() {
+    return new CommendPersonCrudRepositoryImpl();
+  }
 
   @Bean
   public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
@@ -89,5 +89,4 @@ public class CheckInApiApplication {
         .with(notificationHandlers::stream)
         .with(middlewares::orderedStream);
   }
-
 }

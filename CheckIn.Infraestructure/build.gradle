@@ -30,9 +30,9 @@ test {
 }
 //apply from: file("$rootProject.projectDir/gradle/heroku/stage.gradle")
 
-/*spotless {
+spotless {
     java {
         googleJavaFormat()
         // Add other formatting rules if needed
     }
-}*/
+}
