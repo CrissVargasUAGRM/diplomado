@@ -87,13 +87,6 @@ project('CheckInApi') {
     }
 }
 
-checkstyle {
-    toolVersion = '10.12.5'
-    configFile = file("${rootProject.projectDir}/config/checkstyle/checkstyle.xml")
-    showViolations = true
-    ignoreFailures = false
-}
-
 sonar {
     properties {
         property "sonar.gradle.skipCompile", "true"

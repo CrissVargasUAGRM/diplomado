@@ -17,7 +17,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class CommendCrudRepositoryImpl implements ICommendRepository {
 
-  @Autowired private ICommendCrudRepository commendCrudRepository;
+  @Autowired
+  private ICommendCrudRepository commendCrudRepository;
 
   @Override
   public UUID update(Commend commend) throws BusinessRuleValidationException {

@@ -9,11 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.util.Streamable;
+import org.springframework.stereotype.Repository;
 
+@Primary
+@Repository
 public class CommendPersonCrudRepositoryImpl implements ICommendPersonRepository {
 
-  @Autowired private ICommendPersonCrudRepository commendPersonCrudRepository;
+  @Autowired
+  private ICommendPersonCrudRepository commendPersonCrudRepository;
 
   @Override
   public UUID update(CommendPerson commend) throws BusinessRuleValidationException {

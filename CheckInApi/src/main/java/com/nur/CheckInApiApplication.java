@@ -59,14 +59,12 @@ public class CheckInApiApplication {
   }
 
   @Bean(name = "commendRepository")
-  public ICommendRepository commendRepository() {
+  public ICommendRepository commendRepository(){
     return new CommendCrudRepositoryImpl();
   }
 
   @Bean(name = "commendPersonRepository")
-  public ICommendPersonRepository commendPersonRepository() {
-    return new CommendPersonCrudRepositoryImpl();
-  }
+  public ICommendPersonRepository commendPersonRepository() { return new CommendPersonCrudRepositoryImpl(); }
 
   @Bean
   public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
